@@ -5,6 +5,11 @@ import logo from '../assets/react.svg'
 const SimpleForms = () => {
   const [email, setEmai] = useState('')
   const [password, setPasword] = useState('')
+  const handlerSubmit = (event) => {
+    event.preventDefault()
+    const submittedData = JSON.stringify({ email, password })
+    console.log(submittedData)
+  }
 
   return (
     <>
@@ -12,7 +17,7 @@ const SimpleForms = () => {
         <div className='login-container'>
           <img src={logo} alt='logo' />
 
-          <form onSubmit={() => {}}>
+          <form onSubmit={handlerSubmit}>
             <label htmlFor='email'>Email</label>
             <input
               type='text'
